@@ -1,0 +1,144 @@
+.has-search .form-control {
+  padding-left: 2.375rem;
+  border-radius: 10px;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 1.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  padding-left: 5px;
+  margin-left: 7px;
+}
+
+.mainStyle {
+  width: 50%;
+}
+.searchButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconsStyle {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.faTrashStyle {
+  color: red;
+}
+
+.faEyeStyle {
+  color: black;
+}
+
+.faEditStyle {
+  color: #0d6efd;
+}
+
+.locationContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  min-width: 78vw;
+}
+
+.childContainer {
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+}
+nav.row.justify-content-center.paginationStyle {
+  width: 28%;
+}
+
+.formRows {
+  padding: 8px;
+}
+
+td {
+  padding: 13px !important;
+}
+th {
+  padding: 15px !important;
+}
+
+.addLocationButton {
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+  width: 190px !important;
+  height: 40px;
+  border-radius: 4px !important;
+}
+.paginationDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 35px !important;
+}
+
+.formLabelStyle {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.buttonLocation {
+  border: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+  width: auto;
+  height: 35px;
+  color: white;
+  border-radius: 4px;
+  margin-top: 0px !important;
+}
+.cardHeaderStyle.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.AddLocationContainer {
+  padding: 20px;
+}
+
+.AddLocationContainer1 {
+  padding: 20px;
+  height: 400px;
+  min-height: 400px;
+  overflow-y: scroll;
+}
+
+.locationCardBody {
+  padding: 3rem 2rem 1rem 2rem !important;
+}
+
+.formLabelStyle1 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.modal-dialog {
+  max-width: 75% !important;
+}
+
+.locationCard {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.locationHeader {
+  padding: 20px !important;
+}
