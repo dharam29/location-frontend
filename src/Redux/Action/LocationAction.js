@@ -1,9 +1,10 @@
 import * as location_info from "../constant";
 
+
 export const getLocationDetails = (offset, search) => {
   return async (dispatch) => {
     const data = await fetch(
-      `https://location-assignment.herokuapp.com/api/v1/location?offset=${offset}&search=${
+      `${location_info.APP_URL}/api/v1/location?offset=${offset}&search=${
         search || ""
       }`
     );
@@ -26,7 +27,7 @@ export const addLocationDetails = (e) => {
       body: JSON.stringify(e),
     };
     return fetch(
-      `https://location-assignment.herokuapp.com/api/v1/location`,
+      `${location_info.APP_URL}/api/v1/location`,
       result
     )
       .then((res) => res.json())
@@ -41,7 +42,7 @@ export const addLocationDetails = (e) => {
 
 export const deleteLocationDetails = (id) => {
   return async (dispatch) => {
-    fetch(`https://location-assignment.herokuapp.com/api/v1/location/` + id, {
+    fetch(`${location_info.APP_URL}/api/v1/location/` + id, {
       method: "delete",
     }).then((data) => {
       dispatch({
@@ -67,7 +68,7 @@ export const updateLocationDetails = (data, id) => {
       body: JSON.stringify(newData),
     };
     fetch(
-      `https://location-assignment.herokuapp.com/api/v1/location/` + id,
+      `${location_info.APP_URL}/api/v1/location/` + id,
       result
     ).then((data) => {
       dispatch({

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import * as moment from 'moment';
 import "./location.css";
 
 export default function ViewModal(props) {
     
   const [menu, setMenu] = useState("");
   const dispatch = useDispatch();
+
+  const getCoordinates = (x, y) => {
+    return `${x}, ${y}`;
+  }
 
   return (
     <>
@@ -129,7 +134,7 @@ export default function ViewModal(props) {
                     <Form.Control
                       type="text"
                       disabled={true}
-                      value={props.data.coordLonLat}
+                      value={getCoordinates(props.data.coordLonLat.x, props.data.coordLonLat.y)}
                     />
                   </Form.Group>
                 </Col>
@@ -234,9 +239,8 @@ export default function ViewModal(props) {
                     </Form.Label>
                     <Form.Control
                       type="text"
-            
                       disabled={true}
-                      value={props.data.created_on}
+                      value={moment(props.data.created_on).format('DD/MM/YYYY HH:MM:SS')}
                     />
                   </Form.Group>
                 </Col>
@@ -262,7 +266,7 @@ export default function ViewModal(props) {
                     <Form.Control
                       type="text"
                       disabled={true}
-                      value={props.data.updated_on}
+                      value={moment(props.data.updated_on).format('DD/MM/YYYY HH:MM:SS')}
                     />
                   </Form.Group>
                 </Col>

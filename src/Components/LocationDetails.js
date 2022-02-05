@@ -78,7 +78,8 @@ class LocationDetails extends Component {
   deleteLocationData = async (id) => {
     let check = await this.props.deleteLocationDetails(id);
 
-    await this.props.getLocationDetails();
+    // await this.props.getLocationDetails();
+    this.updatePage();
   };
 
   handleView = (data) => {
@@ -116,6 +117,21 @@ class LocationDetails extends Component {
       dataCount: data.count,
     });
   };
+
+  updatePage = async () => {
+    this.setState({ updateModal: false })
+    
+    setTimeout(async() => {
+      const data = await this.props.getLocationDetails(
+        this.state.offset,
+        this.state.search
+      );
+      this.setState({
+        locationdeatail: data.data,
+        dataCount: data.count,
+      });
+    }, 1000);
+  }
 
   render() {
     return (
@@ -264,10 +280,10 @@ class LocationDetails extends Component {
           onHide={() => this.setState({ updateModal: false })}
         >
           <Modal.Header closeButton>
-            <Modal.Title>View Location</Modal.Title>
+            <Modal.Title>Update Location</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <UpdateModal data={this.state.currentUpdateData} />
+            <UpdateModal closeModal={() => this.updatePage()} data={this.state.currentUpdateData} />
           </Modal.Body>
         </Modal>
       </div>

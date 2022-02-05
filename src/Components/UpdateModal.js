@@ -42,7 +42,13 @@ class UpdateModal extends Component {
       },
       id
     );
+
+    this.closeModal();
   };
+
+  closeModal = () => {
+    this.props.closeModal();
+  }
 
   render() {
     return (
